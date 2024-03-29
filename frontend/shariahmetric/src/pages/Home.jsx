@@ -1,7 +1,37 @@
-import React from 'react';
+import React from "react";
+import CustomButton from "../components/CustomButton";
+import "../pages-css/Home.css";
+import NavBar from "../components/NavBar";
+import { Link } from "react-router-dom";
 
 function Home() {
-  return <h1>Home Page</h1>;
+  return (
+    <div id="Home">
+      <NavBar />
+      <div className="main">
+        <div className="content">
+          <div className="sc">
+            <em>
+              Streamlin<span>e</span>
+            </em>
+            <h1>Shariah Compliance</h1>
+          </div>
+          <div className="precise">with Precision &amp; Expertise</div>
+
+          <div className="buttons">
+            <Link to="/SignUp">
+              <CustomButton variant="primary">Sign Up</CustomButton>
+            </Link>
+            <Link to="/LogIn">
+              <CustomButton variant="secondary">Log In</CustomButton>
+            </Link>
+          </div>
+        </div>
+
+        <div className="sideimage"></div>
+      </div>
+    </div>
+  );
 }
 
 export default Home;

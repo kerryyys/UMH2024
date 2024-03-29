@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap');
+
+.custom-button {
+  padding: 8px 24px;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-size: 20px;
+  font-family: 'DM Sans', sans-serif;
+}
+
+.primary {
+  background-color: #1193b2;
+  color: #FBF8F6;
+}
+
+.secondary {
+  background-color: transparent;
+  color: #1193b2;
+}
+
+.success {
+  background-color: transparent;
+  color: #1193b2;
+  border: #1193b2;
+}

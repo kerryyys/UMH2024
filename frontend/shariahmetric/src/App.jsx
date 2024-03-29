@@ -1,5 +1,3 @@
-import { useState } from "react";
-// Right now this page is using App.css
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import React from "react";
@@ -12,7 +10,6 @@ import ContactUs from "./pages/ContactUs";
 
 function App() {
   return (
-    
     <Router>
       <NavBar />
       <Routes>
@@ -26,4 +23,3 @@ function App() {
 }
 
 export default App;
-
