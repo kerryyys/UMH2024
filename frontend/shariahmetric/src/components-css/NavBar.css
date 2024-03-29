@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap');
+
+.navbar {
+    width: 90%;
+    height: 78px;
+    align-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+    background-color: transparent;
+    border-bottom: #1193B2 solid 1px;
+    border-top: #1193B2 solid 1px;
+    padding: 0 20px;
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 5%;
+    z-index: 1000;
+    font-size: 24px;
+}
+
+.logo {
+    width: 170px;
+    height: 33.78px;
+    background-image: url(../assets/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    alt: "ShariahMetric";
+}
+
+.menu {
+    display: flex;
+    gap: 55px;
+}
+
+.menu-item {
+    color: #1193B2;
+    text-decoration: none;
+    font-weight: normal;
+    transition: color 0.3s ease;
+}
+
+.menu-item:hover {
+    color: black;
+}
+
+.contact-us {
+    background-color: #1193B2;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 20px;
+}
+
+.contact-us:hover {
+    background-color: #FFFFFF;
+    color: #1193B2;
+    border: #1193B2 solid 1px;
+    border-radius: 20px;
+}
