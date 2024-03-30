@@ -13,8 +13,6 @@ import SignUp from "./pages/SignUp";
 function App() {
   return (
     <Router>
-      <NavBar />
-
       <Routes>
         <Route path="/Home" element={<Home />} />
         <Route path="/Extracto" element={<Extracto />} />

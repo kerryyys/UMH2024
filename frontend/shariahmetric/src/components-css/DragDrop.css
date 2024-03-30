@@ -4,7 +4,6 @@
   width: 40vw;
   height: 90vh; /* Adjusted to occupy 90% of viewport height */
   margin: auto; /* Centering the container horizontally */
-  padding: 20px;
   margin-left: 20px;
   border-radius: 10px;
   border: #d9d9d9 1px solid;
@@ -44,7 +43,7 @@ button {
   height: 54px;
   color: #1193b2;
   background-color: #fbf8f6;
-  border: #1193B2 1px solid;
+  border: #1193b2 1px solid;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
