@@ -11,7 +11,6 @@ import ContactUs from "./pages/ContactUs";
 function App() {
   return (
     <Router>
-      <NavBar />
       <Routes>
         <Route path="/Home" element={<Home />} />
         <Route path="/Extracto" element={<Extracto />} />

@@ -1,16 +1,19 @@
-import React from 'react';
-import SideBar from '../components/SideBar';
-import DragDrop from '../components/DragDrop';
+import React from "react";
+import SideBar from "../components/SideBar";
+import DragDrop from "../components/DragDrop";
 import "../pages-css/Extracto.css";
 
 function Extracto() {
   return (
     <div className="container">
-      <div className='sidebar'>
+      <div className="sidebar">
         <SideBar />
       </div>
 
-      <div className='dragdrop'> <DragDrop /></div>
+      <div className="dragdrop">
+        <DragDrop />
+      </div>
+
       <div className="content">
         <div className="how">
           <p>How to Use Extrato :</p>
