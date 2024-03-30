@@ -1,16 +1,36 @@
-// Login.jsx
-
 import React, { useState } from 'react';
 import logoImage from '../assets/LogImage.svg'; // Import your image file
 import "../pages-css/SignUp.css";
+import { Link } from 'react-router-dom'; 
 
 function SignUp() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  
-  const handleLogin = () => {
-    // Here you can add your login logic, like making an API call to authenticate the user
-    console.log('Logging in with:', username, password);
+  const [confirmPassword, setConfirmPassword] = useState('');
+
+  const handleSignUp = (e) => {
+    e.preventDefault();
+
+    // Email validation regular expression
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    
+    if (!emailRegex.test(username)) {
+      alert('Please enter a valid email address.');
+      return;
+    }
+
+    if (password.length < 6) {
+      alert('Password must be at least 6 characters long.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Passwords do not match.');
+      return;
+    }
+
+    // Proceed with sign up logic
+    console.log('Signing up with:', username, password);
   };
 
   return (
@@ -23,21 +43,19 @@ function SignUp() {
         <h2 className='createAcc'>Create Account</h2>
         <h1 className='OneAcc'>One account for all</h1>
         <hr></hr>
-        <form onSubmit={handleLogin}>
-          <div >
-            {/*<label htmlFor="username">Username:</label>*/}
+        <form onSubmit={handleSignUp}>
+          <div>
             <input
-              type="text"
+              type="email"
               id="username"
               placeholder='Email Address'
               value={username}
               onChange={(e) => setUsername(e.target.value)}
               style={{ width: '368px', height: '46.76px', borderRadius: '10px' }}
-
+              required
             />
           </div>
           <div>
-            {/*<label htmlFor="password">Password:</label>*/}
             <input
               type="password"
               id="password"
@@ -45,24 +63,27 @@ function SignUp() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               style={{ width: '368px', height: '46.76px', borderRadius: '10px' }}
+              minLength={6}
+              required
             />
           </div>
           <div>
-            {/*<label htmlFor="password">Password:</label>*/}
             <input
               type="password"
-              id="password"
+              id="confirmPassword"
               placeholder='Confirm your password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
               style={{ width: '368px', height: '46.76px', borderRadius: '10px' }}
+              minLength={6}
+              required
             />
           </div>
-
-         
-          <button type="Sign Up" >Sign Up</button>
+          <button type="submit">Sign Up</button>
            
-          <h1 className='dy'><br></br>Already have an account?</h1>
+          <Link to="/Login" className='dy'>
+              already have an account?
+        </Link>
         </form>
       </div>
     </div>
