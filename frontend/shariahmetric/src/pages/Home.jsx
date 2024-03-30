@@ -6,31 +6,34 @@ import { Link } from "react-router-dom";
 
 function Home() {
   return (
-    <div id="Home">
-      <NavBar />
-      <div className="main">
-        <div className="contentH">
-          <div className="sc">
-            <em>
-              Streamlin<span>e</span>
-            </em>
-            <h1>Shariah Compliance</h1>
-          </div>
-          <div className="precise">with Precision &amp; Expertise</div>
 
-          <div className="buttons">
-            <Link to="/SignUp">
-              <CustomButton variant="primary">Sign Up</CustomButton>
-            </Link>
-            <Link to="/LogIn">
-              <CustomButton variant="secondary">Log In</CustomButton>
-            </Link>
+      <div>
+        <NavBar />
+        <div className="main">
+          <div className="contentH">
+            <div className="sc">
+              <em>
+                <span>Streamline</span>
+              </em>
+              <h1>Shariah Compliance</h1>
+              <div className="precise">with Precision &amp; Expertise</div>
+            </div>
+            
+
+            <div className="buttons">
+              <Link to="/SignUp">
+                <CustomButton variant="primary">Sign Up</CustomButton>
+              </Link>
+              <Link to="/LogIn">
+                <CustomButton variant="secondary">Log In</CustomButton>
+              </Link>
+            </div>
           </div>
+          <div className="sideimage"></div>
         </div>
-
-        <div className="sideimage"></div>
       </div>
-    </div>
+    
+      
   );
 }
 

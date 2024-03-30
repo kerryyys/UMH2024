@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
 
-#Home .main {
+.main {
   width: 100%;
-  height: auto;
-  margin-top: 12%;
-  margin-left: 13%;
+  height: 100vh;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding-left: 10%;
 }
 
-#Home body {
+body {
   background-color: #fbf8f6;
   margin: 0;
   padding: 0;
@@ -17,7 +17,7 @@
   color: #1193b2;
 }
 
-.content em {
+em {
   color: rgba(17, 147, 178, 0.75);
   font-size: 40px;
   letter-spacing: 45px;
@@ -25,11 +25,8 @@
   font-weight: 400;
 }
 
-.content em span {
-  margin-right: -45px;
-}
 
-.content h1 {
+h1 {
   font-size: 85px;
   font-family: "DM Serif Display", serif;
   font-weight: 700;
@@ -40,28 +37,27 @@
   color: #104b59;
 }
 
-.content .sc {
+.sc {
   border-bottom: 1px solid #1193b2;
   width: min-content;
 }
 
-.content .precise {
+.precise {
   font-size: 24px;
   color: rgba(79, 79, 79, 0.5);
   font-style: italic;
-  margin-left: 50%;
-  margin-top: 10px;
+  text-align: right;
 }
 
-.content .precise .with {
+.precise, .with {
   font-size: 20px;
 }
 
-.content .precise .precision-expertise {
+.precise, .precision-expertise {
   font-size: 32px;
 }
 
-.content .buttons {
+.buttons {
   display: flex;
   gap: 20px;
   margin-top: 20px;
@@ -79,10 +75,9 @@
 
 @media screen and (max-width: 768px) {
   .main {
-    margin-top: 30%;
-    margin-left: 0;
+    padding-left: 10%;
     display: block;
-    padding: 0 20px;
+    padding-top: 40%;
   }
   .sideimage {
     display: none;
