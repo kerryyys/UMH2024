@@ -1,6 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
+
 .containerAN {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   margin-top: 20px;
@@ -11,7 +13,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 280px;
+  width: 350px;
   height: 94px;
   background-color: rgba(255, 255, 255, 0.5);
   border: #d9d9d9 1px solid;

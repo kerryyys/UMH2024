@@ -1,5 +1,8 @@
+// DragDrop.jsx
 import React, { useRef } from "react";
+import axios from "axios";
 import "../components-css/DragDrop.css";
+import LoadingIndicator from "./LoadingIndicator";
 
 function DragDrop({ onFileAdd }) {
   const fileInputRef = useRef(null);
@@ -10,9 +13,9 @@ function DragDrop({ onFileAdd }) {
     }
   };
 
-  const handleFileSelect = (event) => {
-    const files = event.target.files;
-    onFileAdd(files);
+  const handleFileSelect = async (event) => {
+    const file = event.target.files[0];
+    await uploadFile(file);
   };
 
   const handleDragOver = (event) => {
@@ -20,10 +23,32 @@ function DragDrop({ onFileAdd }) {
     event.stopPropagation();
   };
 
-  const handleDrop = (event) => {
+  const handleDrop = async (event) => {
     event.preventDefault();
-    const files = event.dataTransfer.files;
-    onFileAdd(files);
+    const file = event.dataTransfer.files[0];
+    await uploadFile(file);
+  };
+
+  const uploadFile = async (file) => {
+    const formData = new FormData();
+    formData.append("file", file);
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/file",
+        formData,
+        {
+          headers: {
+            "Content-Type": "multipart/form-data",
+          },
+        }
+      );
+
+      onFileAdd(response.data.name); // Call the callback function with the file name
+      console.log("File uploaded successfully:", response.data);
+    } catch (error) {
+      console.error("Error uploading file:", error);
+    }
   };
 
   return (
@@ -42,10 +67,7 @@ function DragDrop({ onFileAdd }) {
           onChange={handleFileSelect}
           ref={fileInputRef}
         />
-
-        <button onClick={handleBrowseFile}>
-          Browse File
-        </button>
+        <button onClick={handleBrowseFile}>Browse File</button>
       </div>
     </div>
   );

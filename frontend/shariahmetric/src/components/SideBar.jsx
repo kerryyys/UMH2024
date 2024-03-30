@@ -1,10 +1,11 @@
+// SideBar.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "../components-css/SideBar.css";
 import TabButton from "./TabButton";
 import AddNew from "../components/AddNew";
 
-function SideBar() {
+function SideBar({ onFileAdd }) {
   const [selectedTab, setSelectedTab] = useState("today");
   const [todayFiles, setTodayFiles] = useState([]);
   const [last7DaysFiles, setLast7DaysFiles] = useState([]);
@@ -13,31 +14,29 @@ function SideBar() {
     setSelectedTab(tab);
   };
 
-  const handleFileAdd = async (file) => {
+  const handleTabRename = (oldLabel, newLabel) => {
+    const updatedTodayFiles = todayFiles.map((file) =>
+      file.name === oldLabel ? { ...file, name: newLabel } : file
+    );
+    setTodayFiles(updatedTodayFiles);
+
+    // If the renamed tab was selected, update selectedTab to reflect the new label
+    if (selectedTab === oldLabel) {
+      setSelectedTab(newLabel);
+    }
+  };
+
+  const handleFileAdd = (file) => {
     if (file.type !== "application/pdf") {
       console.error("Only PDF files are allowed.");
       return;
     }
 
-    const formData = new FormData();
-    formData.append("file", file);
-
-    try {
-      const response = await fetch("your-backend-api-url", {
-        method: "POST",
-        body: formData,
-      });
-
-      if (response.ok) {
-        console.log("File successfully uploaded.");
-      } else {
-        console.error("Failed to upload file.");
-      }
-    } catch (error) {
-      console.error("Error uploading file:", error);
-    }
+    // Update todayFiles state with the new file name
+    setTodayFiles([...todayFiles, { name: file.name }]);
   };
 
+  // Pass the handleFileAdd function to AddNew component
   return (
     <div id="sidebar">
       <div className="sidebar-content">
@@ -54,7 +53,7 @@ function SideBar() {
               key={index}
               label={file.name}
               isActive={selectedTab === file.name}
-              onClick={() => handleTabClick(file.name)}
+              onClick={(newLabel) => handleTabRename(file.name, newLabel)}
             />
           ))}
 
@@ -64,7 +63,7 @@ function SideBar() {
               key={index}
               label={file.name}
               isActive={selectedTab === file.name}
-              onClick={() => handleTabClick(file.name)}
+              onClick={(newLabel) => handleTabRename(file.name, newLabel)}
             />
           ))}
         </div>

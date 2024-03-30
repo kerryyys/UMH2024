@@ -4,7 +4,6 @@
   width: 40vw;
   height: 90vh; /* Adjusted to occupy 90% of viewport height */
   margin: auto; /* Centering the container horizontally */
-  padding: 20px;
   margin-left: 20px;
   border-radius: 10px;
   border: #d9d9d9 1px solid;
@@ -20,11 +19,12 @@
   background-image: url(../assets/upload.svg);
   background-size: contain;
   background-repeat: no-repeat;
-  margin-left: 100px;
+  margin-left: 15px;
+  margin-bottom: 20px;
 }
 
 .info span {
-  margin-left: 100px;
+  margin-left: 15px;
   font-family: "DM Sans", serif;
   font-size: 24px;
   font-weight: 500;
@@ -38,11 +38,12 @@
 }
 
 button {
-  width: 280px;
-  height: 94px;
-  border: #1193b2 1px solid;
+  cursor: pointer;
+  width: 180px;
+  height: 54px;
   color: #1193b2;
   background-color: #fbf8f6;
+  border: #1193b2 1px solid;
   border-radius: 10px;
   display: flex;
   flex-direction: column;

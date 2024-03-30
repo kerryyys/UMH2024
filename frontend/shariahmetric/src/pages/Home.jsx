@@ -9,7 +9,7 @@ function Home() {
     <div id="Home">
       <NavBar />
       <div className="main">
-        <div className="content">
+        <div className="contentH">
           <div className="sc">
             <em>
               Streamlin<span>e</span>

@@ -1,20 +1,65 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
 
 .tab-button {
-    width: 280px;
-    height: 48px;
-    background-color: rgba(255, 255, 255, 0.05);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14;
-    border-radius: 10px;
-    margin-left: 5px;
-    color: #fff;
-    cursor: pointer;
-    padding: 8px 10px;
-    transition: background-color 0.3s ease;
+  position: relative; /* Ensure proper positioning of the "Rename" button */
+  width: 345px;
+  height: 48px;
+  background-color: rgba(255, 255, 255, 0.05);
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  color: #fff;
+  cursor: pointer;
+  padding: 16px 10px 8px 10px; /* Adjust right padding to leave space */
+  transition: background-color 0.3s ease;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .tab-button.active {
-    background-color: #FFFFFF;
-    color: #0B3052;
+  background-color: #73d0ed;
+  color: #ffffff;
+}
+
+.rename-button {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+
+.rename-button:hover {
+  text-decoration: underline;
+}
+
+.tab-button input {
+  width: calc(100% - 70px); /* Adjust input width */
+  height: 100%;
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  padding: 0;
+  margin: 0;
+}
+
+.tab-button input:focus {
+  outline: none;
+}
+
+.tab-button.hovered .rename-button {
+  width: 20px;
+  height: 20px;
+  background-image: url(../assets/rename.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: right;
 }
