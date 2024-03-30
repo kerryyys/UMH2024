@@ -1,14 +1,16 @@
 // Extracto.jsx
 import React, { useState } from "react";
+import { Document, Page } from "react-pdf";
 import SideBar from "../components/SideBar";
 import DragDrop from "../components/DragDrop";
 import SideChat from "../components/SideChat";
 import "../pages-css/Extracto.css";
+import Report from "../components/Report";
 
 function Extracto() {
   const [todayFiles, setTodayFiles] = useState([]);
   const [fileAdded, setFileAdded] = useState(false);
-  const [reportUploaded, setReportUploaded] = useState(false);
+  const [reportUploaded, setReportUploaded] = useState(true);
 
   // Function to handle file addition
   // const handleFileAdd = (file) => {
@@ -32,6 +34,7 @@ function Extracto() {
     // setTodayFiles([...todayFiles, { name: file.name }]);
     setReportUploaded(true);
   };
+  const pdf_url = "report.pdf";
 
   return (
     <div id="Extracto">
@@ -43,10 +46,15 @@ function Extracto() {
 
         <div className="dragdrop">
           {/* Pass the handleFileAdd function to DragDrop component */}
-          <DragDrop onFileAdd={handleFileAdd} />
+          {/* <DragDrop onFileAdd={handleFileAdd} /> */}
+          <Document file={pdf_url}>
+            <Page pageNumber={1} />
+          </Document>
         </div>
         {reportUploaded ? (
-          <SideChat></SideChat>
+          <div className="report">
+            <Report></Report>
+          </div>
         ) : (
           <div className="content">
             <div className="how">
