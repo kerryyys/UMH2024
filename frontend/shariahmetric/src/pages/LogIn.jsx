@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import logoImage from '../assets/Log2.svg'; // Import your image file
-import "../pages-css/Login.css";
+import "../pages-css/LogIn.css";
 import { Link } from 'react-router-dom'; 
 
 function Login() {

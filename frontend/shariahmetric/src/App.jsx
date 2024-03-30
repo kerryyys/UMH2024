@@ -5,7 +5,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
 import Extracto from "./pages/Extracto";
-import Chatbot from "./pages/Chatbot";
+import Chatroom from "./pages/Chatroom";
 import ContactUs from "./pages/ContactUs";
 import Login from "./pages/LogIn";
 import SignUp from "./pages/SignUp";
@@ -16,7 +16,7 @@ function App() {
       <Routes>
         <Route path="/Home" element={<Home />} />
         <Route path="/Extracto" element={<Extracto />} />
-        <Route path="/Chatbot" element={<Chatbot />} />
+        <Route path="/Chatroom" element={<Chatroom />} />
         <Route path="/ContactUs" element={<ContactUs />} />
         <Route path="/Login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />

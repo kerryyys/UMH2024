@@ -7,14 +7,18 @@
   margin-left: 13%;
   display: flex;
   justify-content: center;
+  background-color: #fbf8f6;
 }
 
 #Home body {
+  width: 100px;
+  height: auto;
   background-color: #fbf8f6;
   margin: 0;
   padding: 0;
   font-family: "DM Sans", sans-serif;
   color: #1193b2;
+  text-decoration: none;
 }
 
 .content em {

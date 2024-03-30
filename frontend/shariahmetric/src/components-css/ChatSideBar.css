@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
+
+.sidebar-content {
+  padding: 20px;
+  background-color: #fbf8f6;
+  border-right: 1px solid #ccc;
+  height: 100%;
+  overflow-y: auto;
+  font-family: "DM Sans", sans-serif;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.logo-container {
+  display: flex;
+  justify-content: center; /* Align logo to the center horizontally */
+}
+
+.logo {
+  font-family: "DM Serif Display", serif;
+  font-size: 24px;
+  text-decoration: none;
+  color: #0e7189;
+}
+
+.sidebar-header {
+  margin-top: 13%;
+}
+.sidebar-header h2 {
+  font-size: 18px;
+  color: #333;
+  margin: 0;
+}
+
+.search-input {
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  flex: 1;
+  margin-left: 10px;
+}
+
+.contact-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.contact-item:hover {
+  background-color: #eaeaea;
+}
+
+.profile-picture {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #ccc;
+  margin-right: 10px;
+  background-image: url(../assets/profile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.contact-details h3 {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
+}

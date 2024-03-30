@@ -53,6 +53,8 @@
 
 .tab-button input:focus {
   outline: none;
+  background-color: #73d0ed;
+  color: #ffffff;
 }
 
 .tab-button.hovered .rename-button {

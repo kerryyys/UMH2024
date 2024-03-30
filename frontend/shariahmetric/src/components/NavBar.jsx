@@ -18,7 +18,7 @@ const NavBar = () => {
         <Link to="/Extracto" className="menu-item">
           Extracto
         </Link>
-        <Link to="/Chatbot" className="menu-item">
+        <Link to="/Chatroom" className="menu-item">
           ChatBot
         </Link>
       </div>
