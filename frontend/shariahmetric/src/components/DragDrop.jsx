@@ -1,16 +1,18 @@
-import React from "react";
-import CustomButton from "../components/CustomButton";
+import React, { useRef } from "react";
 import "../components-css/DragDrop.css";
-import "../components/CustomButton";
 
-function DragDrop() {
+function DragDrop({ onFileAdd }) {
+  const fileInputRef = useRef(null);
+
   const handleBrowseFile = () => {
-    document.getElementById("fileInput").click();
+    if (fileInputRef.current) {
+      fileInputRef.current.click();
+    }
   };
 
   const handleFileSelect = (event) => {
     const files = event.target.files;
-    // Process the selected files as needed
+    onFileAdd(files);
   };
 
   const handleDragOver = (event) => {
@@ -20,29 +22,30 @@ function DragDrop() {
 
   const handleDrop = (event) => {
     event.preventDefault();
-    event.stopPropagation();
     const files = event.dataTransfer.files;
-    // Process the dropped files as needed
+    onFileAdd(files);
   };
 
   return (
     <div id="drag-drop" onDrop={handleDrop} onDragOver={handleDragOver}>
-      <div className="container">
+      <div className="containerDD">
         <div className="info">
           <div className="cloud"></div>
-          <span>Drag and Drop Files Here</span>
+          <span>Drag & Drop</span>
           <p>File supported PDF</p>
         </div>
         <input
           type="file"
-          id="fileInput"
+          className="upload"
           accept=".pdf"
           style={{ display: "none" }}
           onChange={handleFileSelect}
+          ref={fileInputRef}
         />
-        <CustomButton variant="success" onClick={handleBrowseFile}>
+
+        <button onClick={handleBrowseFile}>
           Browse File
-        </CustomButton>
+        </button>
       </div>
     </div>
   );

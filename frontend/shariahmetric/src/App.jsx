@@ -17,7 +17,7 @@ function App() {
   return (
     <Router>
       <NavBar />
-      {window.location.pathname !== '/Login' && window.location.pathname !== '/SignUp' && <NavBar />}
+       
       <Routes>
         <Route path="/Home" element={<Home />} />
         <Route path="/Extracto" element={<Extracto />} />

@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import "../components-css/AddNew.css";
 
 function AddNew({ onFileAdd }) {
@@ -28,14 +27,8 @@ function AddNew({ onFileAdd }) {
   };
 
   return (
-    <div className="container">
-      <div>
-        <Link to="/Home" className="logo">
-          ShariahMetric
-        </Link>
-      </div>
-
-      <div
+    <div className="containerAN">
+      <button
         className={`drop-area ${isDragging ? "dragging" : ""}`}
         onDragEnter={handleDragEnter}
         onDragOver={handleDragEnter}
@@ -44,18 +37,13 @@ function AddNew({ onFileAdd }) {
       >
         <p>+ New File</p>
         <span>Drop PDF Here</span>
-      </div>
+      </button>
       <input
         type="file"
         accept=".pdf"
         onChange={handleFileInputChange}
         style={{ display: "none" }}
       />
-      <button
-        onClick={() => document.querySelector('input[type="file"]').click()}
-      >
-        Upload File
-      </button>
     </div>
   );
 }

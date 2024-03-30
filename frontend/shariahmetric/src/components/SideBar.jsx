@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../components-css/SideBar.css";
 import TabButton from "./TabButton";
 import AddNew from "../components/AddNew";
@@ -12,47 +13,61 @@ function SideBar() {
     setSelectedTab(tab);
   };
 
-  const handleFileAdd = (file) => {
-    const currentDate = new Date();
-    const fileDate = new Date(file.lastModified);
+  const handleFileAdd = async (file) => {
+    if (file.type !== "application/pdf") {
+      console.error("Only PDF files are allowed.");
+      return;
+    }
 
-    // Calculate the difference in milliseconds
-    const difference = currentDate.getTime() - fileDate.getTime();
-    const daysDifference = Math.floor(difference / (1000 * 3600 * 24));
+    const formData = new FormData();
+    formData.append("file", file);
 
-    // Add the file to the appropriate state based on its age
-    if (daysDifference <= 7) {
-      setLast7DaysFiles([...last7DaysFiles, file]);
-    } else {
-      setTodayFiles([...todayFiles, file]);
+    try {
+      const response = await fetch("your-backend-api-url", {
+        method: "POST",
+        body: formData,
+      });
+
+      if (response.ok) {
+        console.log("File successfully uploaded.");
+      } else {
+        console.error("Failed to upload file.");
+      }
+    } catch (error) {
+      console.error("Error uploading file:", error);
     }
   };
 
   return (
     <div id="sidebar">
-      <div className="logo">ShariahMetric</div>
-      <div className="container">
+      <div className="sidebar-content">
+        <div className="logo">
+          <Link to="/Home">ShariahMetric</Link>
+        </div>
+
         <AddNew onFileAdd={handleFileAdd} />
 
-        <p>Today</p>
-        {todayFiles.map((file, index) => (
-          <TabButton
-            key={index}
-            label={file.name}
-            isActive={selectedTab === file.name}
-            onClick={() => handleTabClick(file.name)}
-          />
-        ))}
+        <div className="history">
+          <p>Today</p>
+          {todayFiles.map((file, index) => (
+            <TabButton
+              key={index}
+              label={file.name}
+              isActive={selectedTab === file.name}
+              onClick={() => handleTabClick(file.name)}
+            />
+          ))}
 
-        <p>Last 7 Days</p>
-        {last7DaysFiles.map((file, index) => (
-          <TabButton
-            key={index}
-            label={file.name}
-            isActive={selectedTab === file.name}
-            onClick={() => handleTabClick(file.name)}
-          />
-        ))}
+          <p>Last 7 Days</p>
+          {last7DaysFiles.map((file, index) => (
+            <TabButton
+              key={index}
+              label={file.name}
+              isActive={selectedTab === file.name}
+              onClick={() => handleTabClick(file.name)}
+            />
+          ))}
+        </div>
       </div>
     </div>
   );

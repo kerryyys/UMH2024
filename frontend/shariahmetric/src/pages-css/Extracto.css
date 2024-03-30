@@ -5,37 +5,58 @@ body {
   font-family: "DM Sans", sans-serif;
   color: rgba(0, 0, 0, 0.4);
   font-size: 14px;
-  justify-content: center;
+  margin: 0;
+  padding: 0;
+  top: 0;
 }
 
 .container {
-  width: 30%;
-  height: 100vh;
-  margin-top: 20px;
+  display: flex;
+  width: 100%;
+  height: 100%;
   margin-bottom: 20px;
-  background-color: #0b3052;
-  justify-content: right;
+  background-color: transparent;
+  border: none;
+  bottom: 0;
+  top: 0;
 }
 
-.container .sidebar{
-    justify-content: left;
-    margin: 0;
-    padding: 0;
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  color: #f0f0f0;
+  padding: 0;
+  margin: 0;
+}
+
+.dragdrop {
+  top: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  flex: 2;
+  padding: 20px;
+}
+
+.container p {
+  color: #b5b5b5;
+  font-size: 16px;
 }
 
 .content .how p {
   font-family: "DM Serif Display", serif;
   font-size: 20px;
   color: #0b3052;
-  align-items: center;
 }
-e .content .upgrade p {
+
+.content .upgrade p {
   color: #1193b2;
   font-size: 20px;
-  align-items: center;
 }
 
 .content .upgrade div p {
   color: rgba(17, 147, 178, 0.5);
-  align-items: center;
 }
