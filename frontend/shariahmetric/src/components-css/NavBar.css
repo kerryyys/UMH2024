@@ -43,6 +43,14 @@
   position: relative;
   display: inline-block;
 }
+
+.menu-item.active {
+  color: white;
+  font-weight: bold;
+  background-color: #0e7189;
+  border-radius: 20px;
+}
+
 .contact-us {
   right: 20%;
 }

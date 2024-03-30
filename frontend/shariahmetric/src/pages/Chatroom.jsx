@@ -14,7 +14,10 @@ function Chatroom() {
     const lastMessage = messages[messages.length - 1];
     if (lastMessage && lastMessage.sender === "user") {
       const timer = setTimeout(() => {
-        const replyMessage = { text: "This is a meesage from the PLT company.", sender: "bot" };
+        const replyMessage = {
+          text: "This is a message from the PLT company.",
+          sender: "bot",
+        };
         setMessages([...messages, replyMessage]);
       }, 1000);
       return () => clearTimeout(timer);
@@ -61,6 +64,12 @@ function MessageInput({ onMessageSend }) {
     setInputValue(e.target.value);
   };
 
+  const handleKeyPress = (e) => {
+    if (e.key === "Enter") {
+      handleMessageSend();
+    }
+  };
+
   return (
     <div className="message-input">
       <input
@@ -68,6 +77,7 @@ function MessageInput({ onMessageSend }) {
         placeholder="Type your message..."
         value={inputValue}
         onChange={handleInputChange}
+        onKeyPress={handleKeyPress}
       />
       <button onClick={handleMessageSend}>Send</button>
     </div>

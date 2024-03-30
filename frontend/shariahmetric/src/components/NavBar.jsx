@@ -1,8 +1,11 @@
 import React from "react";
 import "../components-css/NavBar.css";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavBar = () => {
+  // Get the current pathname
+  const location = useLocation();
+
   return (
     <nav className="navbar">
       <div>
@@ -12,13 +15,28 @@ const NavBar = () => {
       </div>
 
       <div className="menu">
-        <Link to="/Home" className="menu-item">
+        <Link
+          to="/Home"
+          className={`menu-item ${
+            location.pathname === "/Home" ? "active" : ""
+          }`}
+        >
           Home
         </Link>
-        <Link to="/Extracto" className="menu-item">
+        <Link
+          to="/Extracto"
+          className={`menu-item ${
+            location.pathname === "/Extracto" ? "active" : ""
+          }`}
+        >
           Extracto
         </Link>
-        <Link to="/Chatroom" className="menu-item">
+        <Link
+          to="/Chatroom"
+          className={`menu-item ${
+            location.pathname === "/Chatroom" ? "active" : ""
+          }`}
+        >
           ChatBot
         </Link>
       </div>

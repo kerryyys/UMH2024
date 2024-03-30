@@ -1,107 +1,143 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
 
- /* Login.css */
-#login body{
-    padding: 0;
-    margin: 0;
+/* Login.css */
+#login body {
+  padding: 0;
+  margin: 0;
 }
+
 .inpage {
-    width: 100%;
-padding: 0;
+  width: 100%;
+  padding: 0;
 
-    display: flex;
-    align-items: auto;
-  }
-  
-  .pic {
-    flex: 1;
-    display: flex;
-    justify-content: flex-start;
-    margin-top: 10%;
-    margin-right:100px;
-    left:0;
-     
-  }
-  
-  .pic img {
-    max-width: 534px; /* Ensure image is responsive */
-    height: 520.51px; 
-  }
-  
-  .formf {
-    flex: 2;
-    margin-top:10%
-  }
-  
-  .formf h2 {
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .formf label {
-    display: block;
-    margin-bottom: 5px;
-  }
-  
-  .formf input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-  }
-  
-  .formf button {
-    width: 100%;
-    padding: 10px;
-    background-color: #007bff;
-    color: #fff;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-  }
-  
-  .formf button:hover {
-    background-color: #0056b3;
-  }
+  display: flex;
+  align-items: auto;
+}
+.inpage .navbar .logo {
+  font-family: "DM Serif Display", serif;
+  font-size: 24px;
+  text-decoration: none;
+  color: #768cb2;
+}
 
-  .logo-image {
-    max-width: 100%; /* Ensure image is responsive */
-    height: auto; /* Maintain aspect ratio */
-    max-height: 100%; /* Set maximum height */
-  }
-  .createAcc {
-    font-family: 'DM Serif Display', serif; /* Use DM Serif Display font */
-    font-size: 48px; /* Set font size to 48 pixels */
-    font-style: italic;
-    color: #10485D;
-  }
+.inpage .navbar .logo:hover {
+  color: #768cb2;
+}
 
-  .OneAcc{
-    font-family: 'DM Serif Display', serif; /* Use DM Serif Display font */
-    font-size: 20px;
-    color: #73D0ED;
-    text-align: center;
-  }
+.inpage .navbar .contact-us {
+  color: #768cb2;
+  text-decoration: none;
+  font-weight: normal;
+  transition: color 0.3s ease;
+  padding: 8px 30px;
+  position: relative;
+  display: inline-block;
+  right: 20%;
+}
 
-  .dy{
-    font-family: 'DM Sans', serif; /* Use DM Serif Display font */
-    font-size: 16px;
-    color: #4f4f4f;
-    text-align: center;
-    justify-content: center;
-    margin-left: 25%;
+.inpage .navbar .contact-us:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #768cb2;
+  border-radius: 20px;
+  z-index: -1;
+}
 
-  }
+.inpage .navbar .contact-us:hover {
+  color: white;
+}
 
-  .formf button{
-    background-color: #45DEFA;
-    color: #FFF7E7;
-    margin-top: 30% ;
-    margin-left: 30%;
-    width:135px;
-    height: 52px;
-    border-radius: 10px;
-    text-align: center;
-    align-self: center;
-  }
+.pic {
+  flex: 1;
+  display: flex;
+  justify-content: flex-start;
+  margin-top: 10%;
+  margin-right: 100px;
+  left: 0;
+}
+
+.pic img {
+  max-width: 534px; /* Ensure image is responsive */
+  height: 520.51px;
+}
+
+.formf {
+  flex: 2;
+  margin-top: 10%;
+}
+
+.formf h2 {
+  margin-bottom: 20px;
+  text-align: center;
+  letter-spacing: 5px;
+}
+
+.formf label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.formf input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.formf button {
+  width: 100%;
+  padding: 10px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+}
+
+.formf button:hover {
+  background-color: #0056b3;
+}
+
+.logo-image {
+  max-width: 100%; /* Ensure image is responsive */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 100%; /* Set maximum height */
+}
+.createAcc {
+  font-family: "DM Serif Display", serif; /* Use DM Serif Display font */
+  font-size: 48px; /* Set font size to 48 pixels */
+  font-style: italic;
+  color: #10485d;
+}
+
+.OneAcc {
+  font-family: "DM Serif Display", serif; /* Use DM Serif Display font */
+  font-size: 20px;
+  color: #73d0ed;
+  text-align: center;
+}
+
+.dy {
+  font-family: "DM Sans", serif; /* Use DM Serif Display font */
+  font-size: 16px;
+  text-align: center;
+  margin-left: -15px;
+  margin-top: 20px;
+}
+
+.formf button {
+  background-color: #45defa;
+  color: #fff7e7;
+  margin-top: 30%;
+  margin-left: 30%;
+  width: 135px;
+  height: 52px;
+  border-radius: 10px;
+  text-align: center;
+  align-self: center;
+}

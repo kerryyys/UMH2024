@@ -1,14 +1,7 @@
-<<<<<<< HEAD
-import React, { useState } from 'react';
-import logoImage from '../assets/Log2.svg'; // Import your image file
-import "../pages-css/LogIn.css";
-import { Link } from 'react-router-dom'; 
-=======
 import React, { useState } from "react";
 import logoImage from "../assets/Log2.svg"; // Import your image file
 import "../pages-css/LogIn.css";
 import { Link } from "react-router-dom";
->>>>>>> 50b8a669e08a6e17fed6a2c92ad1ceb174ba2416
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -38,6 +31,18 @@ function Login() {
 
   return (
     <div className="inpage" id="login">
+      <nav className="navbar">
+        <div>
+          <Link to="/Home" className="logo">
+            ShariahMetric
+          </Link>
+        </div>
+        <div>
+          <Link to="/ContactUs" className="contact-us">
+            Contact Us
+          </Link>
+        </div>
+      </nav>
       <div className="pic">
         <img src={logoImage} alt="Logo" />
       </div>
@@ -80,12 +85,15 @@ function Login() {
               }}
             />
           </div>
-          <button type="submit">Sign in</button>
-
-          <Link to="/SignUp" className="dy">
+          <button type="submit">Log in</button>
+        </form>
+        <div className="dy">
+          <Link
+            to="/SignUp"
+            style={{ textDecoration: "none", color: "rgba(79,79,79,0.7)" }}>
             Do you have an account?
           </Link>
-        </form>
+        </div>
       </div>
     </div>
   );

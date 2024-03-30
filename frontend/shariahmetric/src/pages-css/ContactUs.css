@@ -1,0 +1,129 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
+
+#contactUs {
+  padding-top: 8%; /* Adjust distance from NavBar */
+}
+
+.CU {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start; /* Align items at the top */
+}
+
+.formCU {
+  flex: 1;
+  padding-left: 10%;
+}
+
+.formCU span {
+  font-family: "DM SERIF DISPLAY", serif;
+  font-size: 35px;
+  font-style: normal;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+.formCU p {
+  padding: 0;
+  margin-bottom: -3px;
+}
+
+.formCU form {
+  padding-top: 8%;
+  justify-content: center;
+}
+
+.formCU .form-group {
+  margin-bottom: 20px;
+}
+
+.formCU .form-group input,
+.formCU .form-group textarea {
+  width: 60%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d9d9d9;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+}
+
+.formCU .form-group ::placeholder {
+  color: #bdbdbd;
+}
+.formCU button {
+  background-color: #1193b2;
+  color: white;
+  padding: 10px 30px;
+  border-radius: 10px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+  border: transparent;
+  margin-left: 20%;
+}
+.infoCU {
+  flex: 1; /* Take up remaining space */
+  display: flex;
+  align-items: center; /* Align items vertically */
+  padding-top: 2%;
+  margin: 20px 0;
+}
+
+.infoCU .contact {
+  background-color: #1193b2;
+  color: white;
+  padding: 80px 60px;
+  border-radius: 10px;
+  width: 70%; /* Adjust width as needed */
+  font-family: "DM Sans", sans-serif;
+  font-size: 20px;
+}
+
+.contact h2 {
+  font-size: 30px;
+  margin-bottom: 60px;
+  margin-top: -20px;
+}
+
+.contact div {
+  margin-bottom: 20px;
+}
+
+.email div {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  background-image: url(../assets/email.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+}
+
+.phone div {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  background-image: url(../assets/phone.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+}
+
+.address div {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  background-image: url(../assets/address.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+}
+
+.workhour div {
+  width: 30px;
+  height: 30px;
+  margin-right: 20px;
+  background-image: url(../assets/time.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  float: left;
+}

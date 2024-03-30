@@ -35,7 +35,6 @@
   padding: 20px;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Align content to the center */
 }
 
 .message {
@@ -55,6 +54,9 @@
   align-self: flex-start;
 }
 
+.chat-input {
+  display: contents;
+}
 .message-input {
   padding: 20px;
   background-color: #f9f9f9;
@@ -71,12 +73,15 @@
 }
 
 .message-input button {
-  padding: 10px 15px;
+  padding: 15px 45px;
   border: none;
   border-radius: 5px;
   background-color: #1193b2;
   color: #fff;
   cursor: pointer;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
 }
 
 .message-input button:hover {

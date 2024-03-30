@@ -1,39 +1,38 @@
-import React, { useState } from 'react';
-import logoImage from '../assets/LogImage.svg'; // Import your image file
+import React, { useState } from "react";
+import logoImage from "../assets/LogImage.svg"; // Import your image file
 import "../pages-css/SignUp.css";
-import { Link } from 'react-router-dom'; 
+import { Link } from "react-router-dom";
 
 function SignUp() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
-  const [confirmPassword, setConfirmPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
 
   const validateInputs = () => {
     // Email validation regular expression
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    
+
     if (!emailRegex.test(username)) {
-      alert('Please enter a valid email address.');
+      alert("Please enter a valid email address.");
       return false;
     }
 
     if (password.length < 6) {
-      alert('Password must be at least 6 characters long.');
+      alert("Password must be at least 6 characters long.");
       return false;
     }
 
     if (password !== confirmPassword) {
-      alert('Passwords do not match.');
+      alert("Passwords do not match.");
       return false;
     }
 
     return true;
   };
 
-  
   const handleRegister = async (e) => {
     e.preventDefault();
-    if(!validateInputs()){
+    if (!validateInputs()) {
       return;
     }
     try {
@@ -64,8 +63,20 @@ function SignUp() {
   };
 
   return (
-    <div className='inpage' id='login'>
-      <div className='pic'>
+    <div className="inpage" id="SignUp">
+      <nav className="navbar">
+        <div>
+          <Link to="/Home" className="logo">
+            ShariahMetric
+          </Link>
+        </div>
+        <div>
+          <Link to="/ContactUs" className="contact-us">
+            Contact Us
+          </Link>
+        </div>
+      </nav>
+      <div className="pic">
         <img src={logoImage} alt="Logo" />
       </div>
 
@@ -82,7 +93,11 @@ function SignUp() {
               placeholder="Email Address"
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              style={{ width: '368px', height: '46.76px', borderRadius: '10px' }}
+              style={{
+                width: "368px",
+                height: "46.76px",
+                borderRadius: "10px",
+              }}
               required
             />
           </div>
@@ -93,7 +108,11 @@ function SignUp() {
               placeholder="Create a password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              style={{ width: '368px', height: '46.76px', borderRadius: '10px' }}
+              style={{
+                width: "368px",
+                height: "46.76px",
+                borderRadius: "10px",
+              }}
               minLength={6}
               required
             />
@@ -102,20 +121,23 @@ function SignUp() {
             <input
               type="password"
               id="confirmPassword"
-              placeholder='Confirm your password'
+              placeholder="Confirm your password"
               value={confirmPassword}
               onChange={(e) => setConfirmPassword(e.target.value)}
-              style={{ width: '368px', height: '46.76px', borderRadius: '10px' }}
+              style={{
+                width: "368px",
+                height: "46.76px",
+                borderRadius: "10px",
+              }}
               minLength={6}
               required
             />
           </div>
           <button type="submit">Sign Up</button>
-           
-          <Link to="/Login" className='dy'>
-              already have an account?
-        </Link>
         </form>
+        <div className="dy">
+          <Link to="/Login" style={{ textDecoration: 'none', color: 'rgba(79,79,79,0.7)' }}>Already have an account?</Link>
+        </div>
       </div>
     </div>
   );

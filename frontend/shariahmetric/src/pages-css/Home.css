@@ -5,20 +5,11 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-<<<<<<< HEAD
-  background-color: #fbf8f6;
-}
-
-#Home body {
-  width: 100px;
-  height: auto;
-=======
   align-items: center;
-  padding-left: 10%;
+  padding-top: 5%;
 }
 
 body {
->>>>>>> 50b8a669e08a6e17fed6a2c92ad1ceb174ba2416
   background-color: #fbf8f6;
   margin: 0;
   padding: 0;
@@ -35,7 +26,6 @@ em {
   font-weight: 400;
 }
 
-
 h1 {
   font-size: 85px;
   font-family: "DM Serif Display", serif;
@@ -48,7 +38,6 @@ h1 {
 }
 
 .sc {
-  border-bottom: 1px solid #1193b2;
   width: min-content;
 }
 
@@ -57,13 +46,17 @@ h1 {
   color: rgba(79, 79, 79, 0.5);
   font-style: italic;
   text-align: right;
+  border-top: 1px solid #1193b2;
+  padding-top: 5%;
 }
 
-.precise, .with {
+.precise,
+.with {
   font-size: 20px;
 }
 
-.precise, .precision-expertise {
+.precise,
+.precision-expertise {
   font-size: 32px;
 }
 
