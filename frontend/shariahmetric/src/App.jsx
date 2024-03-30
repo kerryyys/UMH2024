@@ -7,15 +7,21 @@ import Home from "./pages/Home";
 import Extracto from "./pages/Extracto";
 import Chatbot from "./pages/Chatbot";
 import ContactUs from "./pages/ContactUs";
+import Login from "./pages/LogIn";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
     <Router>
+      <NavBar />
+
       <Routes>
         <Route path="/Home" element={<Home />} />
         <Route path="/Extracto" element={<Extracto />} />
         <Route path="/Chatbot" element={<Chatbot />} />
         <Route path="/ContactUs" element={<ContactUs />} />
+        <Route path="/Login" element={<Login />} />
+        <Route path="/SignUp" element={<SignUp />} />
       </Routes>
     </Router>
   );

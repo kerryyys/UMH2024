@@ -1,0 +1,23 @@
+.loading-indicator {
+  font-family: "DM Sans", serif;
+  font-size: 20px;
+  padding: 10px 20px;
+  border-radius: 5px;
+  justify-content: center;
+}
+
+.loading-indicator .spinner {
+  width: 64px;
+  height: 64px;
+  margin: 20px auto;
+  background-image: url(../assets/load.svg);
+}
+.loading-indicator p {
+  font-weight: 700;
+  color: #0e7189;
+}
+
+.loading-indicator span {
+  color: rgba(14, 113, 137, 0.3);
+  margin-left: 35px;
+}

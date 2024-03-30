@@ -1,0 +1,86 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
+
+.side-chat-container {
+  width: 466px;
+  height: 100vh;
+  background-color: #ffffff;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-messages {
+  flex-grow: 1;
+  overflow-y: auto;
+  margin-bottom: 20px;
+}
+
+.instruction {
+  font-style: italic;
+  color: #999;
+  margin-bottom: 10px;
+}
+
+.instruction h2 {
+  color: #0b3052;
+  font-size: 20px;
+}
+
+.instruction p {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.instruction span {
+  font-size: 12px;
+  color: rgba(0, 0, 0, 0.3);
+}
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.message.sent {
+  background-color: #73d0ed;
+  color: #fff;
+  align-self: flex-end;
+}
+
+.message.received {
+  background-color: #e0e0e0;
+  color: #333;
+  align-self: flex-start;
+}
+
+.chat-input {
+  width: 428px;
+  height: 57px;
+  display: flex;
+  align-items: bottom;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+.chat-input button {
+  padding: 10px 20px;
+  background-color: #73d0ed;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.chat-input button:hover {
+  width: 24px;
+  height: 24px;
+  background-image: url(../assets/send.svg);
+  background-size: contain;
+  background-repeat: no-repeat;
+}

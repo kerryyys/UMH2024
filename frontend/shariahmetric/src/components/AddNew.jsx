@@ -1,4 +1,5 @@
-import { useState } from "react";
+// AddNew.jsx
+import React, { useState } from "react";
 import "../components-css/AddNew.css";
 
 function AddNew({ onFileAdd }) {
@@ -27,7 +28,11 @@ function AddNew({ onFileAdd }) {
   };
 
   return (
-    <div className="containerAN">
+    <div
+      className="containerAN"
+      onDragOver={handleDragEnter}
+      onDrop={handleDrop}
+    >
       <button
         className={`drop-area ${isDragging ? "dragging" : ""}`}
         onDragEnter={handleDragEnter}
