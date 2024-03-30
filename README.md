@@ -33,16 +33,12 @@ This guide provides step-by-step instructions to download, install, and run the 
 6. **Run the React App (Development Mode):**
    - Start the development server by running the following command:
      ```
-     npm start
+     npm run dev
      ```
    - This will compile the React app and open it in your default web browser. You can now view and interact with the app.
+   - This will redirect you to the localhost:5173, ctrl+click to view the website
 
-7. **Run the React App (Production Build, optional):**
-   - If you want to build the app for production, run the following command:
-     ```
-     npm run build
-     ```
-   - This will create an optimized production build of the app in the `build` folder. You can serve this build using a static file server like `serve` or `http-server`.
+
 
 ## Troubleshooting
 - If you encounter any errors during the installation process or while running the app, try running `npm install` again with the `--legacy-peer-deps` flag:
