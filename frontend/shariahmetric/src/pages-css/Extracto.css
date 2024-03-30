@@ -15,16 +15,18 @@
 .sidebar {
   flex: 1;
   color: #f0f0f0;
+  width: 100%;
 }
 
 .dragdrop {
-  flex: 1; /* Adjust flex property to fill remaining space */
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
 .content {
+  flex: 1;
   margin: auto;
   padding-left: 5%;
 }
@@ -48,6 +50,7 @@
 
 .content .upgrade .up {
   margin-left: 15%;
+  margin-top: 15%;
   font-family: "DM Serif Display", serif;
   color: #1193b2;
   font-size: 20px;
