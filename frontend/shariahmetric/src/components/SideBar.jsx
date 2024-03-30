@@ -52,7 +52,7 @@ function SideBar({ onFileAdd }) {
             <TabButton
               key={index}
               label={file.name}
-              isActive={selectedTab === file.name}
+              // isActive={selectedTab === file.name}
               onClick={(newLabel) => handleTabRename(file.name, newLabel)}
             />
           ))}

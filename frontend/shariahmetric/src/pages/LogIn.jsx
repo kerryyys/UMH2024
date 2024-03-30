@@ -1,11 +1,18 @@
+<<<<<<< HEAD
 import React, { useState } from 'react';
 import logoImage from '../assets/Log2.svg'; // Import your image file
 import "../pages-css/LogIn.css";
 import { Link } from 'react-router-dom'; 
+=======
+import React, { useState } from "react";
+import logoImage from "../assets/Log2.svg"; // Import your image file
+import "../pages-css/LogIn.css";
+import { Link } from "react-router-dom";
+>>>>>>> 50b8a669e08a6e17fed6a2c92ad1ceb174ba2416
 
 function Login() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [isEmailValid, setIsEmailValid] = useState(true);
 
   const handleLogin = (e) => {
@@ -15,7 +22,7 @@ function Login() {
       return;
     }
     // Here you can add your login logic, like making an API call to authenticate the user
-    console.log('Logging in with:', username, password);
+    console.log("Logging in with:", username, password);
   };
 
   const validateEmail = (email) => {
@@ -30,41 +37,54 @@ function Login() {
   };
 
   return (
-    <div className='inpage' id='login'>
-      <div className='pic'>
+    <div className="inpage" id="login">
+      <div className="pic">
         <img src={logoImage} alt="Logo" />
       </div>
-      <div className='formf'>
-        <h2 className='createAcc'>Welcome Back !</h2>
-        <h1 className='OneAcc'>Log in to your account</h1>
+      <div className="formf">
+        <h2 className="createAcc">Welcome Back !</h2>
+        <h1 className="OneAcc">Log in to your account</h1>
         <hr></hr>
         <form onSubmit={handleLogin}>
           <div>
             <input
               type="email"
               id="username"
-              placeholder='Email Address'
+              placeholder="Email Address"
               value={username}
               onChange={handleUsernameChange}
-              style={{ width: '368px', height: '46.76px', borderRadius: '10px', borderColor: isEmailValid ? "" : "red" }}
+              style={{
+                width: "368px",
+                height: "46.76px",
+                borderRadius: "10px",
+                borderColor: isEmailValid ? "" : "red",
+              }}
             />
-            {!isEmailValid && <p style={{ color: 'red' }}>Please enter a valid email address.</p>}
+            {!isEmailValid && (
+              <p style={{ color: "red" }}>
+                Please enter a valid email address.
+              </p>
+            )}
           </div>
           <div>
             <input
               type="password"
               id="password"
-              placeholder='Create a password'
+              placeholder="Create a password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              style={{ width: '368px', height: '46.76px', borderRadius: '10px' }}
+              style={{
+                width: "368px",
+                height: "46.76px",
+                borderRadius: "10px",
+              }}
             />
           </div>
           <button type="submit">Sign in</button>
-          
-          <Link to="/SignUp" className='dy'>
-              Do you have an account?
-        </Link>
+
+          <Link to="/SignUp" className="dy">
+            Do you have an account?
+          </Link>
         </form>
       </div>
     </div>

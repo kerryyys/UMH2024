@@ -14,6 +14,7 @@ function App() {
   return (
     <Router>
       <Routes>
+        <Route path="/" element={<Home />} />
         <Route path="/Home" element={<Home />} />
         <Route path="/Extracto" element={<Extracto />} />
         <Route path="/Chatroom" element={<Chatroom />} />
