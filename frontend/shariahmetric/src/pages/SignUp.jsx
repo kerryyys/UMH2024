@@ -8,40 +8,34 @@ function SignUp() {
   const [password, setPassword] = useState('');
   const [confirmPassword, setConfirmPassword] = useState('');
 
-  const handleSignUp = (e) => {
-    e.preventDefault();
-
+  const validateInputs = () => {
     // Email validation regular expression
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     
     if (!emailRegex.test(username)) {
       alert('Please enter a valid email address.');
-      return;
+      return false;
     }
 
     if (password.length < 6) {
       alert('Password must be at least 6 characters long.');
-      return;
+      return false;
     }
 
     if (password !== confirmPassword) {
       alert('Passwords do not match.');
-      return;
+      return false;
     }
 
-    // Proceed with sign up logic
-    console.log('Signing up with:', username, password);
-  const [username, setUsername] = useState("");
-  const [password, setPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
+    return true;
+  };
 
+  
   const handleRegister = async (e) => {
     e.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match!");
+    if(!validateInputs()){
       return;
     }
-
     try {
       const response = await fetch("http://127.0.0.1:8000/register", {
         method: "POST",
@@ -79,8 +73,6 @@ function SignUp() {
         <h2 className="createAcc">Create Account</h2>
         <h1 className="OneAcc">One account for all</h1>
         <hr></hr>
-        <form onSubmit={handleSignUp}>
-          <div>
         <form onSubmit={handleRegister}>
           <div>
             {/*<label htmlFor="username">Username:</label>*/}
