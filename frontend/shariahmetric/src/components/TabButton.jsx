@@ -2,10 +2,11 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../components-css/TabButton.css";
 
-const TabButton = ({ label, isActive, onClick }) => {
+const TabButton = ({ label, onClick }) => {
   const [isHovered, setIsHovered] = useState(false);
   const [isRenaming, setIsRenaming] = useState(false);
   const [newLabel, setNewLabel] = useState(label);
+  const [isActive, setIsActive] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -35,6 +36,7 @@ const TabButton = ({ label, isActive, onClick }) => {
       }`}
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
+      onClick={() => !isActive && setIsActive(true)}
     >
       {isRenaming ? (
         <input
