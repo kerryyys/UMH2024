@@ -10,13 +10,13 @@ function ChatSideBar() {
   };
 
   return (
-  <div className="sidebar-content">
+  <div className="sidebarC-content">
     <div className="logo-container">
       <Link to="/Home" className="logo">
         ShariahMetric
       </Link>
     </div>
-    <div className="sidebar-header">
+    <div className="sidebarC-header">
       <h2>Chats</h2>
       <input
         type="text"

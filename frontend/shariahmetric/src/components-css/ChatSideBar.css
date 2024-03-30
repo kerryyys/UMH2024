@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Display:ital@0;1&display=swap");
 
-.sidebar-content {
+.sidebarC-content {
   padding: 20px;
   background-color: #fbf8f6;
   border-right: 1px solid #ccc;
@@ -9,7 +9,7 @@
   font-family: "DM Sans", sans-serif;
 }
 
-.sidebar-header {
+.sidebarC-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,10 +28,10 @@
   color: #0e7189;
 }
 
-.sidebar-header {
+.sidebarC-header {
   margin-top: 13%;
 }
-.sidebar-header h2 {
+.sidebarC-header h2 {
   font-size: 18px;
   color: #333;
   margin: 0;
