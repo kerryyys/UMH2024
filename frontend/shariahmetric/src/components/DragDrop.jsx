@@ -1,10 +1,11 @@
 // DragDrop.jsx
 import React, { useRef } from "react";
 import axios from "axios";
+import { useState } from "react";
 import "../components-css/DragDrop.css";
-import LoadingIndicator from "./LoadingIndicator";
 
 function DragDrop({ onFileAdd }) {
+  const [isLoading, setIsLoading] = useState(false);
   const fileInputRef = useRef(null);
 
   const handleBrowseFile = () => {
@@ -30,6 +31,7 @@ function DragDrop({ onFileAdd }) {
   };
 
   const uploadFile = async (file) => {
+    setIsLoading(true);
     const formData = new FormData();
     formData.append("file", file);
 
@@ -43,11 +45,15 @@ function DragDrop({ onFileAdd }) {
           },
         }
       );
-
-      onFileAdd(response.data.name); // Call the callback function with the file name
+      if (response.status === 200) {
+        alert("PDF processed successfully");
+      }
+      onFileAdd(); // Call the callback function with the file name
       console.log("File uploaded successfully:", response.data);
     } catch (error) {
       console.error("Error uploading file:", error);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -67,7 +73,13 @@ function DragDrop({ onFileAdd }) {
           onChange={handleFileSelect}
           ref={fileInputRef}
         />
-        <button onClick={handleBrowseFile}>Browse File</button>
+        <button
+          onClick={handleBrowseFile}
+          disabled={isLoading}
+          className={isLoading ? "loading" : ""}
+        >
+          {isLoading ? "Uploading..." : "Browse File"}
+        </button>
       </div>
     </div>
   );

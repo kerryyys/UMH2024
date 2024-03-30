@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../components-css/SideChat.css";
+import logo from "../assets/send.svg";
 
 function SideChat() {
   const [messages, setMessages] = useState([]); // State to store chat messages
@@ -23,6 +24,11 @@ function SideChat() {
     setIsInstructionShown(false);
   };
 
+  useEffect(() => {
+    if (inputMessage === "") {
+      setIsInstructionShown(true);
+    }
+  }, [inputMessage]);
   return (
     <div className="side-chat-container">
       <div className="chat-messages">
@@ -55,7 +61,9 @@ function SideChat() {
           value={inputMessage}
           onChange={handleInputChange}
         />
-        <button onClick={sendMessage}></button>
+        <button onClick={sendMessage}>
+          <img src={logo} alt="" />
+        </button>
       </div>
     </div>
   );
